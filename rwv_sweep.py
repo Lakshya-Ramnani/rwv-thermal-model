@@ -13,8 +13,8 @@ Uncertainty parameters, set by the RWV and the operating protocol
     h_drug        drug-side plug face and inner Ti surface
 
 Sweeps run at the final 31 C baseline so the figures match the reported
-configuration. Coarse grid (Nr=10, Nz=15) is within ~3% of the fine grid
-and is sufficient for trends.
+configuration. Coarse grid (Nr=10, Nz=15) is within 0.04% of a 
+56x105 reference and is sufficient for trends.
 
 Author: Lakshya Ramnani
 """
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 from rwv_model import BASELINE, solve
 
 BLUE, CORAL = '#185FA5', '#993C1D'
-COARSE = dict(Nr=10, Nz=15)      # sweep grid, within ~3% of the fine grid
+COARSE = dict(Nr=10, Nz=15)      # sweep grid, within 0.04% of a 56x105 reference
 FINE = dict(Nr=12, Nz=21)        # reporting grid, matches rwv_model.py
 
 
