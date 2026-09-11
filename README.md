@@ -61,6 +61,10 @@ The plug is defined as **transitioned** when the *minimum* temperature across al
 
 **Grid independence.** Refining from the 12 x 21 reporting grid to a 56 x 105 reference shifts the predicted transition time by 0.02% (4.33123 min against 4.33211 min) and the uniformity gap by 0.09 s. Convergence is monotonic and the result is grid-independent to four significant figures. The 10 x 15 grid used for parameter sweeps is within 0.04% of the same reference.
 
+![Mesh convergence](Figure6_convergence.png)
+
+Run `python convergence.py` to reproduce the table and this figure.
+
 ## Results
 
 ![Thermal evolution](Figure2_thermal_evolution.png)
@@ -108,6 +112,7 @@ Three convective coefficients are Nusselt-correlation estimates rather than meas
 | `rwv_model.py` | The solver. Lumped wall plus 2D axisymmetric plug. | 2, 3 |
 | `rwv_sweep.py` | Parameter sweeps over design knobs and convective coefficients. | 4, 5 |
 | `rwv_cross_section.py` | Schematic only. **Contains no physics**, coordinates are hardcoded for illustration. | 1 |
+| `convergence.py` | Mesh convergence study against a 56 x 105 reference grid. | 6 |
 
 ## Running it
 
@@ -115,6 +120,7 @@ Three convective coefficients are Nusselt-correlation estimates rather than meas
 pip install -r requirements.txt
 python rwv_model.py     # baseline run and figures 2, 3
 python rwv_sweep.py     # sensitivity sweeps and figures 4, 5
+python convergence.py   # mesh convergence study and figure 6
 ```
 
 `rwv_sweep.py` imports from `rwv_model.py`, so keep both in the same directory.
